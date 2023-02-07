@@ -1296,7 +1296,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1190098640}
         m_TargetAssemblyTypeName: WaveSpawner, Assembly-CSharp
-        m_MethodName: AutoStart
+        m_MethodName: AutoWaveSpawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10658,7 +10658,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 664d0f53c8464f0439bd0bfc3f46015c, type: 3}
   m_Name: 
@@ -12515,22 +12515,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69831b7aae5d7b64f8ae18c02b10d718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesPrefabs:
-  - {fileID: 7062547316359332135, guid: c561c01198c4fe447a9e981d52f4e755, type: 3}
-  - {fileID: 2719554809894665776, guid: c60438e2f51d76e4b8f24f571dd848c8, type: 3}
-  - {fileID: 2719554809894665776, guid: c31f163496d9b474c8f1136e2337d6d5, type: 3}
-  - {fileID: 2719554809894665776, guid: 4e3cd817137d82649b49b847961f8fad, type: 3}
-  - {fileID: 2719554809894665776, guid: 5ca46a420f678dd4eba28b50714d4dac, type: 3}
-  - {fileID: 2719554809894665776, guid: 24d2685747234a84bbaa7085cb833ba8, type: 3}
-  spawnChances:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  delay: 0.2
-  q: 3
+  _waves:
+  - _waveSettings:
+    - _enemy: {fileID: 9000549803833170657, guid: c561c01198c4fe447a9e981d52f4e755, type: 3}
+      _spawnDelay: 0.2
+    - _enemy: {fileID: 9000549803833170657, guid: c561c01198c4fe447a9e981d52f4e755, type: 3}
+      _spawnDelay: 0.2
+    - _enemy: {fileID: 9000549803833170657, guid: c561c01198c4fe447a9e981d52f4e755, type: 3}
+      _spawnDelay: 0.2
+  - _waveSettings:
+    - _enemy: {fileID: 4275773882909418998, guid: c60438e2f51d76e4b8f24f571dd848c8, type: 3}
+      _spawnDelay: 0.2
+    - _enemy: {fileID: 4275773882909418998, guid: c60438e2f51d76e4b8f24f571dd848c8, type: 3}
+      _spawnDelay: 0.2
+    - _enemy: {fileID: 4275773882909418998, guid: c60438e2f51d76e4b8f24f571dd848c8, type: 3}
+      _spawnDelay: 0.2
+  - _waveSettings:
+    - _enemy: {fileID: 4275773882909418998, guid: c60438e2f51d76e4b8f24f571dd848c8, type: 3}
+      _spawnDelay: 0.2
+    - _enemy: {fileID: 4275773882909418998, guid: c60438e2f51d76e4b8f24f571dd848c8, type: 3}
+      _spawnDelay: 0.2
+    - _enemy: {fileID: 4275773882909418998, guid: c60438e2f51d76e4b8f24f571dd848c8, type: 3}
+      _spawnDelay: 0.2
 --- !u!4 &1190098641
 Transform:
   m_ObjectHideFlags: 0
@@ -16126,7 +16132,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1190098640}
         m_TargetAssemblyTypeName: WaveSpawner, Assembly-CSharp
-        m_MethodName: StartNextWave
+        m_MethodName: LaunchWave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

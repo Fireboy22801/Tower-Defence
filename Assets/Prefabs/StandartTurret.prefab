@@ -55,7 +55,7 @@ MonoBehaviour:
   slowAmount: 0
   slowDuration: 0
   lineRenderer: {fileID: 0}
-  impactEffect: {fileID: 1529251847436644345, guid: ba4d1efef0473744685a69fcdf6f2ef3, type: 3}
+  impactEffect: {fileID: 0}
   impactLight: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 989742011012050596}
