@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
@@ -21,7 +22,6 @@ public class PauseMenu : MonoBehaviour
     {
         UI.SetActive(!UI.activeSelf);
         buttonsUI.SetActive(!buttonsUI.activeSelf);
-
         if (UI.activeSelf)
         {
             Time.timeScale = 0;

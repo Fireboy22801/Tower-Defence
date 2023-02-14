@@ -2,37 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
     public static int EnemiesAlive;
 
     [SerializeField] private Waves[] _waves;
+    [SerializeField] private GameObject startButton;
+    [SerializeField] private GameObject speedButton;
+    [SerializeField] private Sprite standartSpeedButton;
+    [SerializeField] private Sprite pressedSpeedButton;
 
     private int _currentEnemyIndex;
     private int _currentWaveIndex;
     private int _enemiesLeftToSpawn;
 
-    private bool _isAutoStart = false;
-
     private void Start()
     {
+        startButton.SetActive(true);
+        speedButton.SetActive(false);
         EnemiesAlive = 0;
         _enemiesLeftToSpawn = _waves[0].WaveSettings.Length;
     }
 
     private void Update()
     {
-        if (_isAutoStart)
+        if (EnemiesAlive <= 0)
         {
-            if (EnemiesAlive <= 0)
-            {
-                LaunchWave();
-                EnemiesAlive = _enemiesLeftToSpawn;
-            }
+            startButton.SetActive(true);
+            speedButton.SetActive(false);
         }
-
-
     }
 
     private IEnumerator SpawnEnemyInWave()
@@ -51,7 +51,6 @@ public class WaveSpawner : MonoBehaviour
         }
         else
         {
-
             if (_currentWaveIndex < _waves.Length - 1)
             {
                 _currentWaveIndex++;
@@ -63,13 +62,37 @@ public class WaveSpawner : MonoBehaviour
 
     public void LaunchWave()
     {
+        startButton.SetActive(false);
+        speedButton.SetActive(true);
+        PlayerStats.Rounds++;
         EnemiesAlive = _waves[_currentWaveIndex].WaveSettings.Length;
         StartCoroutine(SpawnEnemyInWave());
     }
 
-    public void AutoWaveSpawn()
+    public void ChangeTimeSpeed()
     {
-        _isAutoStart = !_isAutoStart;
+        ChangeImage();
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 2;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+    private void ChangeImage()
+    {
+        Image image = speedButton.GetComponent<Image>();
+        if (image.sprite == standartSpeedButton)
+        {
+            image.sprite = pressedSpeedButton;
+        }
+        else
+        {
+            image.sprite = standartSpeedButton;
+        }
     }
 }
 

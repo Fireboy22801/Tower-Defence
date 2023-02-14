@@ -30,13 +30,4 @@ public class GameManager : MonoBehaviour
         buttonsUI.SetActive(false);
         gameOverUI.SetActive(true);
     }
-
-    public void SwitchTimeSpeed()
-    {
-        if (Time.timeScale == 1)
-            Time.timeScale = 3;
-        else
-            Time.timeScale = 1;
-    }
-
 }
