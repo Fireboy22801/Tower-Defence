@@ -9,8 +9,16 @@ public class NodeUI : MonoBehaviour
     public TMP_Text upgradeCost;
     public TMP_Text sellAmount;
     public Button upgradeButton;
+    public Color upgradedColor;
 
+    private Color standartColor;
     private Node _target;
+
+
+    private void Start()
+    {
+        standartColor = upgradeButton.image.color;
+    }
 
     public void SetTarget(Node target)
     {
@@ -20,11 +28,13 @@ public class NodeUI : MonoBehaviour
 
         if (!target.isUpgraded)
         {
+            upgradeButton.image.color = standartColor;
             upgradeCost.text = "$" + target.turretBluePrint.upgradeCost;
             upgradeButton.interactable = true;
         }
         else
         {
+            upgradeButton.image.color = upgradedColor;
             upgradeCost.text = "DONE";
             upgradeButton.interactable = false;
         }
