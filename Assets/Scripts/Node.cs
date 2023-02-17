@@ -53,10 +53,8 @@ public class Node : MonoBehaviour
     private void BuildTurret(TurretBluePrint bluePrint)
     {
         if (PlayerStats.Money < bluePrint.cost)
-        {
-            Debug.Log("Not enough money to build that!");
             return;
-        }
+
         PlayerStats.Money -= bluePrint.cost;
 
         GameObject tempTurret = Instantiate(bluePrint.prefab, GetBuildPosition(), Quaternion.identity);
