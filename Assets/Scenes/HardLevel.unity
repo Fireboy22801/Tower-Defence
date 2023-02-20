@@ -11821,7 +11821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d4bf375a17e8b44822e7440b553941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 1000
+  startMoney: 999999
   moneyText: {fileID: 1934391338}
   livesText: {fileID: 463330080}
   roundsText: {fileID: 389683777}

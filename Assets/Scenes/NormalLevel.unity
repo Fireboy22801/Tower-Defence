@@ -6689,7 +6689,7 @@ MonoBehaviour:
   laserBeamerBP:
     prefab: {fileID: 4631849454733817903, guid: c6f37c438a855fa40ac162d961acccbd, type: 3}
     cost: 500
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab: {fileID: 4631849454733817903, guid: cf2c670985244d1458f649ec8a0d15f8, type: 3}
     upgradeCost: 2000
 --- !u!114 &615728157
 MonoBehaviour:
@@ -11821,7 +11821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d4bf375a17e8b44822e7440b553941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 1000
+  startMoney: 99999
   moneyText: {fileID: 1934391338}
   livesText: {fileID: 463330080}
   roundsText: {fileID: 389683777}
