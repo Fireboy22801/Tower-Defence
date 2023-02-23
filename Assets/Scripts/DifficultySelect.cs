@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class DifficultySelect : MonoBehaviour
 {
-    public string EasyLevel = "Scenes/EasyLevel";
-    public string NormalLevel = "Scenes/NormalLevel";
-    public string HardLevel = "Scenes/HardLevel";
-
     public SceneFader sceneFader;
+    public string Level = "NormalLevel";
 
     public void Easy()
     {
-        sceneFader.FadeTo(EasyLevel);
+        sceneFader.FadeTo(Level);
+        WaveSpawner.Difficulty = 0;
     }
 
     public void Normal()
     {
-        sceneFader.FadeTo(NormalLevel);
+        sceneFader.FadeTo(Level);
+        WaveSpawner.Difficulty = 1;
     }
 
     public void Hard()
     {
-        sceneFader.FadeTo(HardLevel);
+        sceneFader.FadeTo(Level);
+        WaveSpawner.Difficulty = 2;
     }
 }

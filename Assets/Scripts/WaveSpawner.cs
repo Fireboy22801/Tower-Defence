@@ -7,13 +7,16 @@ using UnityEngine.UI;
 public class WaveSpawner : MonoBehaviour
 {
     public static int EnemiesAlive;
+    public static int Difficulty;
 
-    [SerializeField] private Waves[] _waves;
+    [SerializeField] private Levels[] levels;
+
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject speedButton;
     [SerializeField] private Sprite standartSpeedButton;
     [SerializeField] private Sprite pressedSpeedButton;
 
+    private Waves[] _waves;
     private int _currentEnemyIndex;
     private int _currentWaveIndex;
     private int _enemiesLeftToSpawn;
@@ -23,6 +26,7 @@ public class WaveSpawner : MonoBehaviour
         startButton.SetActive(true);
         speedButton.SetActive(false);
         EnemiesAlive = 0;
+        _waves = levels[Difficulty].Waves;
         _enemiesLeftToSpawn = _waves[0].WaveSettings.Length;
     }
 
@@ -94,6 +98,13 @@ public class WaveSpawner : MonoBehaviour
             image.sprite = standartSpeedButton;
         }
     }
+}
+
+[System.Serializable]
+public class Levels
+{
+    [SerializeField] private Waves[] _waves;
+    public Waves[] Waves { get => _waves; }
 }
 
 [System.Serializable]
